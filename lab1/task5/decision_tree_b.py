@@ -35,5 +35,3 @@ print(accuracy_score(y_test, y_pred))
 print(confusion_matrix(y_test, y_pred))
 
 visualize(clf)
-
-

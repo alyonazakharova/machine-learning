@@ -5,8 +5,7 @@ from machine_learning.lab1.task4.svm import read_data, visualize
 
 x_train, x_test, y_train, y_test = read_data("../data/svmdata_d.txt", "../data/svmdata_d_test.txt")
 
-C = 1.0  # SVM regularization parameter
-# полиномиальное степеней 1-5, сигмоидальная функция, гауссово
+C = 1.0
 poly_svc_1 = svm.SVC(kernel='poly', degree=1, C=C).fit(x_train, y_train)
 poly_svc_2 = svm.SVC(kernel='poly', degree=2, C=C).fit(x_train, y_train)
 poly_svc_3 = svm.SVC(kernel='poly', degree=3, C=C).fit(x_train, y_train)

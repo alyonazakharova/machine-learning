@@ -22,8 +22,7 @@ pred = clf.predict(x_test)
 print(accuracy_score(y_test, pred))
 print(confusion_matrix(y_test, pred))
 
-
-C = 1.0  # SVM regularization parameter
+C = 1.0
 model = svm.SVC(kernel='linear', C=C)
 clf = model.fit(x_train, y_train)
 fig, ax = plt.subplots()

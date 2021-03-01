@@ -31,7 +31,6 @@ for metric in ['euclidean', 'manhattan', 'chebyshev', 'minkowski']:
     y_pred = knn.predict(x_test)
     print(accuracy_score(y_test, y_pred))
 
-
 # c
 knn = KNeighborsClassifier(n_neighbors=15)
 knn.fit(features, target)

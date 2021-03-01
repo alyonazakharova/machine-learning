@@ -2,7 +2,7 @@ from sklearn import svm
 
 from machine_learning.lab1.task4.svm import read_data, visualize
 
-x_train, x_test, y_train, y_test = read_data("data/svmdata_c.txt", "data/svmdata_c_test.txt")
+x_train, x_test, y_train, y_test = read_data("../data/svmdata_c.txt", "../data/svmdata_c_test.txt")
 
 C = 1.0
 # линейное, полиномиальное степеней 1-5, сигмоидальная функция, гауссово

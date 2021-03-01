@@ -5,7 +5,7 @@ from sklearn.metrics import confusion_matrix
 
 from machine_learning.lab1.task4.svm import read_data, make_meshgrid, plot_contours
 
-x_train, x_test, y_train, y_test = read_data("data/svmdata_a.txt", "data/svmdata_a_test.txt")
+x_train, x_test, y_train, y_test = read_data("../data/svmdata_a.txt", "../data/svmdata_a_test.txt")
 
 clf = svm.SVC()
 clf.fit(x_train, y_train)

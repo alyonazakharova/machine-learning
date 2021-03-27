@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-# import keras
 from keras import layers
 from sklearn.model_selection import train_test_split
 from tensorflow import keras
@@ -22,22 +21,18 @@ def visualize_data(arr):
     plt.show()
 
 
-# nn_1
 dataset = pd.read_csv("data/nn_1.csv").to_numpy()
 x, y = get_data(dataset)
 
-visualize_data(dataset)
+# visualize_data(dataset)
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.2)
 
-# activations = 'relu', 'sigmoid', 'softmax'
-# optimizers = 'Adam', 'SGD'
-
 network = keras.Sequential([layers.Input(2),
-                            layers.Dense(1, activation='sigmoid')])
+                            layers.Dense(1, activation='sigmoid')]) # sigmoid, relu, tanh
 
 network.compile(loss='binary_crossentropy',
-                optimizer='Adam',
+                optimizer='SGD', #Adam, SGD
                 metrics=['accuracy'])
 
 epochs = [10, 100, 250, 500, 800, 1000]

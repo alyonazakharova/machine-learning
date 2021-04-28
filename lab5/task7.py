@@ -10,10 +10,10 @@ print(data)
 x = data.speed.values.reshape(-1, 1)
 y = data.dist.values
 
-# plt.plot(x, y)
-# plt.xlabel('speed')
-# plt.ylabel('distance')
-# plt.show()
-#
 reg = LinearRegression().fit(x, y)
 print(reg.predict(np.array(40).reshape(-1, 1)))
+
+plt.scatter(x, y)
+plt.xlabel('speed')
+plt.ylabel('distance')
+plt.show()

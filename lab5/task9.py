@@ -11,16 +11,17 @@ data = pd.read_csv("data/nsw74psid1.csv").to_numpy()
 x = data[:, :-1]
 y = data[:, -1]
 
-# x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
 
-reg = DecisionTreeRegressor().fit(x, y)
-print("Decision Tree:", reg.score(x, y))
+reg = DecisionTreeRegressor().fit(x_train, y_train)
+print("Decision Tree:", reg.score(x_test, y_test))
 
-reg = LinearRegression().fit(x, y)
-print("Linear Regression:", reg.score(x, y))
+reg = LinearRegression().fit(x_train, y_train)
+print("Linear Regression:", reg.score(x_test, y_test))
 
-reg = SVR().fit(x, y)
-print("SVR:", reg.score(x, y))
+reg = SVR().fit(x_train, y_train)
+print("SVR:", reg.score(x_test, y_test))
 
-reg = SVR(C=100).fit(x, y)
-print("SVR, C=100:", reg.score(x, y))
+reg = SVR(C=100).fit(x_train, y_train)
+print("SVR, C=100:", reg.score(x_test, y_test))
+print("SVR, C=100:", reg.score(x_test, y_test))
